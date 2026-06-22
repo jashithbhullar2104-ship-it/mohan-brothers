@@ -30,6 +30,7 @@ Config via environment variables (all optional):
     NOTIFY_TO     recipient(s), comma-sep   (default mbros1937@rediffmail.com)
 """
 
+import base64
 import json
 import os
 import re
@@ -55,6 +56,7 @@ DB_PATH = os.environ.get("DB_PATH", os.path.join(ROOT, "enquiries.db"))
 RATE_LIMIT = int(os.environ.get("RATE_LIMIT", "8"))  # per IP per hour
 ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN") or secrets.token_urlsafe(18)
 ADMIN_TOKEN_FROM_ENV = bool(os.environ.get("ADMIN_TOKEN"))
+ADMIN_USER = os.environ.get("ADMIN_USER", "MOHAN_ADMIN")
 
 # Email notification config. Notifications are sent only when SMTP_HOST is set.
 SMTP_HOST = os.environ.get("SMTP_HOST", "").strip()
@@ -297,14 +299,18 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(body)
 
     def _authed(self):
+        # HTTP Basic auth: username (ADMIN_USER) + password (ADMIN_TOKEN).
         auth = self.headers.get("Authorization", "")
-        token = ""
-        if auth.startswith("Bearer "):
-            token = auth[7:].strip()
-        if not token:
-            qs = parse_qs(urlparse(self.path).query)
-            token = (qs.get("token") or [""])[0]
-        return secrets.compare_digest(token, ADMIN_TOKEN)
+        if not auth.startswith("Basic "):
+            return False
+        try:
+            decoded = base64.b64decode(auth[6:].strip()).decode("utf-8")
+        except Exception:
+            return False
+        user, sep, pw = decoded.partition(":")
+        if not sep:
+            return False
+        return secrets.compare_digest(user, ADMIN_USER) and secrets.compare_digest(pw, ADMIN_TOKEN)
 
     def _read_body(self):
         length = int(self.headers.get("Content-Length", "0") or "0")
@@ -506,10 +512,11 @@ def main():
         print(f"  Email  : ON  -> {', '.join(NOTIFY_TO)}  (via {SMTP_HOST}:{SMTP_PORT}, {SMTP_SECURITY})")
     else:
         print("  Email  : OFF (set SMTP_HOST + credentials to enable notifications)")
+    print(f"  Admin user : {ADMIN_USER}")
     if ADMIN_TOKEN_FROM_ENV:
-        print("  Admin token: (loaded from ADMIN_TOKEN env var)")
+        print("  Admin pass : (loaded from ADMIN_TOKEN env var)")
     else:
-        print(f"  Admin token: {ADMIN_TOKEN}")
+        print(f"  Admin pass : {ADMIN_TOKEN}")
         print("  (set ADMIN_TOKEN env var to make this permanent)")
     print("─" * 56)
     try:

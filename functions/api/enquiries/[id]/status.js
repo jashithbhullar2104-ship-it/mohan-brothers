@@ -18,11 +18,20 @@ function safeEqual(a, b) {
   return r === 0;
 }
 
+// Admin auth: HTTP Basic with username + password.
+//   Username: env.ADMIN_USER (default "MOHAN_ADMIN")
+//   Password: env.ADMIN_TOKEN (required)
 function authed(request, env) {
-  const auth = request.headers.get("Authorization") || "";
-  let token = auth.startsWith("Bearer ") ? auth.slice(7).trim() : "";
-  if (!token) token = new URL(request.url).searchParams.get("token") || "";
-  return Boolean(env.ADMIN_TOKEN) && safeEqual(token, env.ADMIN_TOKEN);
+  const user = env.ADMIN_USER || "MOHAN_ADMIN";
+  const pass = env.ADMIN_TOKEN || "";
+  if (!pass) return false;
+  const h = request.headers.get("Authorization") || "";
+  if (!h.startsWith("Basic ")) return false;
+  let decoded = "";
+  try { decoded = atob(h.slice(6).trim()); } catch (e) { return false; }
+  const i = decoded.indexOf(":");
+  if (i < 0) return false;
+  return safeEqual(decoded.slice(0, i), user) && safeEqual(decoded.slice(i + 1), pass);
 }
 
 export async function onRequestPost({ request, env, params }) {

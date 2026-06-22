@@ -72,8 +72,10 @@
 <div id="gate">
   <h1>Enquiry Inbox</h1>
   <p>Mohan Brothers — admin access</p>
-  <label for="tok">Admin Token</label>
-  <input type="password" id="tok" placeholder="Paste admin token" autocomplete="current-password">
+  <label for="usr">Username</label>
+  <input type="text" id="usr" placeholder="Username" autocomplete="username" style="margin-bottom:16px;">
+  <label for="tok">Password</label>
+  <input type="password" id="tok" placeholder="Password" autocomplete="current-password">
   <button class="gate-btn" id="login">Sign In</button>
   <div class="err" id="gate-err"></div>
 </div>
@@ -102,16 +104,17 @@
 
 <script>
 const $ = (s) => document.querySelector(s);
-let TOKEN = localStorage.getItem("mb_admin_token") || "";
+let USER = localStorage.getItem("mb_admin_user") || "";
+let PASS = localStorage.getItem("mb_admin_pass") || "";
 let STATUS = "";
 let DATA = [];
 
-function authHeaders(){ return { "Authorization": "Bearer " + TOKEN }; }
+function authHeaders(){ return { "Authorization": "Basic " + btoa(USER + ":" + PASS) }; }
 
 async function load(){
   const url = "/api/enquiries" + (STATUS ? ("?status=" + STATUS) : "");
   const res = await fetch(url, { headers: authHeaders() });
-  if(res.status === 401){ signOut("Invalid or expired token."); return; }
+  if(res.status === 401){ signOut("Session expired — please sign in again."); return; }
   const json = await res.json();
   DATA = json.enquiries || [];
   const c = json.counts || {};
@@ -185,21 +188,26 @@ function toCSV(){
 
 function signIn(){ $("#gate").classList.add("hidden"); $("#app").classList.remove("hidden"); load(); }
 function signOut(msg){
-  TOKEN=""; localStorage.removeItem("mb_admin_token");
+  USER=""; PASS="";
+  localStorage.removeItem("mb_admin_user");
+  localStorage.removeItem("mb_admin_pass");
   $("#app").classList.add("hidden"); $("#gate").classList.remove("hidden");
   $("#gate-err").textContent = msg||"";
 }
 
 // events
 $("#login").addEventListener("click", async () => {
-  const t = $("#tok").value.trim();
-  if(!t){ $("#gate-err").textContent="Enter the admin token."; return; }
-  TOKEN = t;
+  const u = $("#usr").value.trim();
+  const p = $("#tok").value;
+  if(!u || !p){ $("#gate-err").textContent="Enter username and password."; return; }
+  USER = u; PASS = p;
   const res = await fetch("/api/enquiries?limit=1", { headers: authHeaders() });
-  if(res.status===401){ $("#gate-err").textContent="Invalid token."; return; }
-  localStorage.setItem("mb_admin_token", t);
+  if(res.status===401){ $("#gate-err").textContent="Invalid username or password."; return; }
+  localStorage.setItem("mb_admin_user", u);
+  localStorage.setItem("mb_admin_pass", p);
   signIn();
 });
+$("#usr").addEventListener("keydown", e => { if(e.key==="Enter") $("#login").click(); });
 $("#tok").addEventListener("keydown", e => { if(e.key==="Enter") $("#login").click(); });
 $("#refresh").addEventListener("click", load);
 $("#export").addEventListener("click", toCSV);
@@ -215,8 +223,8 @@ $("#cards").addEventListener("click", e => {
   setStatus(id, b.dataset.act);
 });
 
-// auto-login if token remembered
-if(TOKEN){ signIn(); }
+// auto-login if credentials remembered
+if(USER && PASS){ signIn(); }
 </script>
 </body>
 </html>
