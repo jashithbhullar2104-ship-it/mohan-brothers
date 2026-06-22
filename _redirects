@@ -1,2 +1,0 @@
-# Serve the admin inbox at a clean /admin URL (rewrite, keeps URL, status 200)
-/admin    /admin.html    200
