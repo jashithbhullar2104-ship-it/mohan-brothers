@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Enquiry Inbox · Mohan Brothers</title>
+<style>
+  :root{
+    --ink:#070707;--deep:#0f0f0f;--surface:#161616;--card:#1d1d1d;--lift:#242424;
+    --brass:#C6A227;--brass-h:#D9B840;--cream:#EEE9DC;--steel:#A4A4A4;--muted:#616161;
+    --rule:rgba(198,162,39,0.16);--r:3px;
+    --fb:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--ink);color:var(--cream);font-family:var(--fb);font-size:15px;line-height:1.5;}
+  a{color:var(--brass);}
+  header{position:sticky;top:0;z-index:10;background:rgba(7,7,7,.97);border-bottom:1px solid var(--rule);backdrop-filter:blur(12px);}
+  .bar{max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .brand b{font-size:1.05rem;letter-spacing:.04em;}
+  .brand small{display:block;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);}
+  .filters{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;}
+  .chip{font:inherit;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);
+        background:var(--surface);border:1px solid var(--rule);padding:7px 13px;border-radius:99px;cursor:pointer;transition:.15s;}
+  .chip:hover{color:var(--cream);}
+  .chip.on{background:var(--brass);color:var(--ink);border-color:var(--brass);}
+  .chip .n{opacity:.7;margin-left:5px;}
+  button.act{font:inherit;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+        border:1px solid var(--rule);background:var(--surface);color:var(--cream);padding:8px 14px;border-radius:var(--r);transition:.15s;}
+  button.act:hover{border-color:var(--brass);color:var(--brass);}
+  main{max-width:1180px;margin:0 auto;padding:26px 24px 80px;}
+
+  /* login gate */
+  #gate{max-width:380px;margin:14vh auto;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:36px 32px;}
+  #gate h1{font-size:1.3rem;margin-bottom:6px;}
+  #gate p{color:var(--steel);font-size:.85rem;margin-bottom:22px;}
+  label{display:block;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+  input[type=password],input[type=text]{width:100%;background:var(--card);border:1px solid rgba(255,255,255,.1);color:var(--cream);
+        font:inherit;padding:12px 14px;border-radius:var(--r);outline:none;}
+  input:focus{border-color:var(--brass);}
+  .gate-btn{width:100%;margin-top:16px;background:var(--brass);color:var(--ink);border:none;font:inherit;font-weight:800;
+        letter-spacing:.1em;text-transform:uppercase;padding:13px;border-radius:var(--r);cursor:pointer;}
+  .err{color:#e0736b;font-size:.82rem;margin-top:12px;min-height:1em;}
+
+  /* cards */
+  .meta{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:var(--muted);font-size:.82rem;flex-wrap:wrap;}
+  .cards{display:grid;gap:14px;}
+  .eq{background:var(--surface);border:1px solid rgba(255,255,255,.05);border-left:3px solid var(--brass);border-radius:var(--r);
+      padding:18px 20px;transition:background .15s;}
+  .eq.handled{border-left-color:var(--muted);opacity:.72;}
+  .eq.archived{border-left-color:#444;opacity:.5;}
+  .eq-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;}
+  .eq-name{font-size:1.05rem;font-weight:600;color:var(--cream);}
+  .eq-co{color:var(--brass);font-size:.9rem;}
+  .eq-time{color:var(--muted);font-size:.78rem;white-space:nowrap;}
+  .eq-svc{display:inline-block;margin:10px 0;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--brass);background:rgba(198,162,39,.1);border:1px solid var(--rule);padding:4px 10px;border-radius:99px;}
+  .eq-msg{color:var(--steel);font-size:.9rem;white-space:pre-wrap;margin:8px 0 14px;line-height:1.65;}
+  .eq-contact{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;margin-bottom:12px;}
+  .eq-contact a{font-weight:500;}
+  .eq-actions{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.05);padding-top:12px;}
+  .eq-actions button{font:inherit;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+      background:transparent;border:1px solid var(--rule);color:var(--steel);padding:6px 12px;border-radius:var(--r);transition:.15s;}
+  .eq-actions button:hover{color:var(--cream);border-color:var(--brass);}
+  .empty{text-align:center;color:var(--muted);padding:70px 0;}
+  .hidden{display:none!important;}
+</style>
+</head>
+<body>
+
+<!-- LOGIN GATE -->
+<div id="gate">
+  <h1>Enquiry Inbox</h1>
+  <p>Mohan Brothers — admin access</p>
+  <label for="tok">Admin Token</label>
+  <input type="password" id="tok" placeholder="Paste admin token" autocomplete="current-password">
+  <button class="gate-btn" id="login">Sign In</button>
+  <div class="err" id="gate-err"></div>
+</div>
+
+<!-- APP -->
+<div id="app" class="hidden">
+  <header>
+    <div class="bar">
+      <div class="brand"><b>Mohan Brothers</b><small>Enquiry Inbox</small></div>
+      <div class="filters" id="filters">
+        <button class="chip on" data-status="">All <span class="n" id="c-all">0</span></button>
+        <button class="chip" data-status="new">New <span class="n" id="c-new">0</span></button>
+        <button class="chip" data-status="handled">Handled <span class="n" id="c-handled">0</span></button>
+        <button class="chip" data-status="archived">Archived <span class="n" id="c-archived">0</span></button>
+      </div>
+      <button class="act" id="refresh">Refresh</button>
+      <button class="act" id="export">Export CSV</button>
+      <button class="act" id="logout">Sign Out</button>
+    </div>
+  </header>
+  <main>
+    <div class="meta" id="meta"></div>
+    <div class="cards" id="cards"></div>
+  </main>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+let TOKEN = localStorage.getItem("mb_admin_token") || "";
+let STATUS = "";
+let DATA = [];
+
+function authHeaders(){ return { "Authorization": "Bearer " + TOKEN }; }
+
+async function load(){
+  const url = "/api/enquiries" + (STATUS ? ("?status=" + STATUS) : "");
+  const res = await fetch(url, { headers: authHeaders() });
+  if(res.status === 401){ signOut("Invalid or expired token."); return; }
+  const json = await res.json();
+  DATA = json.enquiries || [];
+  const c = json.counts || {};
+  const all = (c.new||0)+(c.handled||0)+(c.archived||0);
+  $("#c-all").textContent = all;
+  $("#c-new").textContent = c.new||0;
+  $("#c-handled").textContent = c.handled||0;
+  $("#c-archived").textContent = c.archived||0;
+  render();
+}
+
+function fmtTime(iso){
+  try{ const d = new Date(iso);
+    return d.toLocaleString(undefined,{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
+  }catch(e){ return iso; }
+}
+const esc = (s) => (s==null?"":String(s)).replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+
+function render(){
+  const wrap = $("#cards");
+  $("#meta").textContent = DATA.length + " enquir" + (DATA.length===1?"y":"ies") + " shown";
+  if(!DATA.length){ wrap.innerHTML = '<div class="empty">No enquiries here yet.</div>'; return; }
+  wrap.innerHTML = DATA.map(e => {
+    const phone = esc(e.phone);
+    const waNum = phone.replace(/[^0-9]/g,"");
+    const email = e.email ? `<a href="mailto:${esc(e.email)}">${esc(e.email)}</a>` : '<span style="color:var(--muted)">no email</span>';
+    return `
+    <div class="eq ${esc(e.status)}" data-id="${e.id}">
+      <div class="eq-top">
+        <div><span class="eq-name">${esc(e.name)}</span> &nbsp;·&nbsp; <span class="eq-co">${esc(e.company)}</span></div>
+        <div class="eq-time">#${e.id} · ${esc(fmtTime(e.created_at))}</div>
+      </div>
+      <div class="eq-svc">${esc(e.service)}</div>
+      <div class="eq-msg">${esc(e.message)}</div>
+      <div class="eq-contact">
+        <a href="tel:${phone}">${phone}</a>
+        ${waNum ? `<a href="https://wa.me/${waNum}" target="_blank" rel="noopener">WhatsApp</a>` : ""}
+        ${email}
+      </div>
+      <div class="eq-actions">
+        ${e.status!=="handled" ? `<button data-act="handled">Mark handled</button>` : ""}
+        ${e.status!=="new" ? `<button data-act="new">Mark new</button>` : ""}
+        ${e.status!=="archived" ? `<button data-act="archived">Archive</button>` : ""}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+async function setStatus(id, status){
+  const res = await fetch(`/api/enquiries/${id}/status`, {
+    method:"POST",
+    headers:{...authHeaders(),"Content-Type":"application/json"},
+    body: JSON.stringify({status})
+  });
+  if(res.ok) load();
+}
+
+function toCSV(){
+  const cols = ["id","created_at","name","company","phone","email","service","message","status"];
+  const head = cols.join(",");
+  const rows = DATA.map(e => cols.map(k => {
+    const v = e[k]==null?"":String(e[k]);
+    return /[",\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v;
+  }).join(","));
+  const blob = new Blob([head+"\n"+rows.join("\n")], {type:"text/csv"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "mohan-brothers-enquiries.csv";
+  a.click();
+}
+
+function signIn(){ $("#gate").classList.add("hidden"); $("#app").classList.remove("hidden"); load(); }
+function signOut(msg){
+  TOKEN=""; localStorage.removeItem("mb_admin_token");
+  $("#app").classList.add("hidden"); $("#gate").classList.remove("hidden");
+  $("#gate-err").textContent = msg||"";
+}
+
+// events
+$("#login").addEventListener("click", async () => {
+  const t = $("#tok").value.trim();
+  if(!t){ $("#gate-err").textContent="Enter the admin token."; return; }
+  TOKEN = t;
+  const res = await fetch("/api/enquiries?limit=1", { headers: authHeaders() });
+  if(res.status===401){ $("#gate-err").textContent="Invalid token."; return; }
+  localStorage.setItem("mb_admin_token", t);
+  signIn();
+});
+$("#tok").addEventListener("keydown", e => { if(e.key==="Enter") $("#login").click(); });
+$("#refresh").addEventListener("click", load);
+$("#export").addEventListener("click", toCSV);
+$("#logout").addEventListener("click", () => signOut(""));
+$("#filters").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if(!b) return;
+  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("on"));
+  b.classList.add("on"); STATUS = b.dataset.status; load();
+});
+$("#cards").addEventListener("click", e => {
+  const b = e.target.closest("button[data-act]"); if(!b) return;
+  const id = b.closest(".eq").dataset.id;
+  setStatus(id, b.dataset.act);
+});
+
+// auto-login if token remembered
+if(TOKEN){ signIn(); }
+</script>
+</body>
+</html>

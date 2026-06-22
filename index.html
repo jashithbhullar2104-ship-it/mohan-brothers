@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohan Brothers | Expertise. Commitment. Value. | Jamshedpur, Est. 1937</title>
+<meta name="description" content="Mohan Brothers — 87 years of industrial machining, gear cutting, heavy fabrication and mechanical maintenance in Jamshedpur. Trusted by Tata Steel, Hindustan Copper, Usha Martin, Thriveni Earthmovers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   MOHAN BROTHERS — FINAL PRODUCTION SITE
+   Tagline: EXPERTISE. COMMITMENT. VALUE.
+═══════════════════════════════════════════ */
+:root {
+  --ink:     #070707;
+  --deep:    #0f0f0f;
+  --surface: #161616;
+  --card:    #1d1d1d;
+  --lift:    #242424;
+  --brass:   #C6A227;
+  --brass-h: #D9B840;
+  --brass-d: #9A7C18;
+  --cream:   #EEE9DC;
+  --steel:   #A4A4A4;
+  --muted:   #616161;
+  --rule:    rgba(198,162,39,0.16);
+  --white:   #FFFFFF;
+
+  --fd: 'Bebas Neue', sans-serif;
+  --fs: 'DM Serif Display', serif;
+  --fb: 'Inter', sans-serif;
+
+  --nav-h: 70px;
+  --r: 2px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--cream);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--deep);}
+::-webkit-scrollbar-thumb{background:var(--brass);border-radius:2px;}
+::selection{background:var(--brass);color:var(--ink);}
+img,video{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+
+/* ─── LAYOUT ─── */
+.wrap{max-width:1300px;margin:0 auto;padding:0 48px;}
+@media(max-width:768px){.wrap{padding:0 22px;}}
+
+/* ─── TYPE ─── */
+.sec-eyebrow{
+  font-family:var(--fb);font-size:10px;font-weight:700;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--brass);
+  display:flex;align-items:center;gap:14px;margin-bottom:18px;
+}
+.sec-eyebrow::after{content:'';flex:0 0 36px;height:1px;background:var(--brass);}
+.sec-title{
+  font-family:var(--fd);font-size:clamp(3rem,6vw,5.2rem);
+  text-transform:uppercase;letter-spacing:.03em;line-height:.93;color:var(--cream);
+}
+.sec-rule{width:44px;height:2px;background:linear-gradient(90deg,var(--brass),transparent);margin:22px 0;}
+
+/* ─── BUTTONS ─── */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--fb);font-size:11px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  padding:14px 28px;border-radius:var(--r);border:none;cursor:pointer;
+  transition:all .22s;white-space:nowrap;
+}
+.btn-gold{background:var(--brass);color:var(--ink);}
+.btn-gold:hover{background:var(--brass-h);transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,.2);}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass);}
+
+/* ─── TAG ─── */
+.tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);border:1px solid var(--rule);padding:4px 10px;border-radius:1px;}
+
+/* ─── REVEAL ─── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease;}
+.rv.in{opacity:1;transform:none;}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;}}
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+#nav{
+  position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:900;
+  display:flex;align-items:center;
+  transition:background .35s,border-color .35s;
+  border-bottom:1px solid transparent;
+}
+#nav.solid{background:rgba(7,7,7,.97);border-bottom-color:var(--rule);backdrop-filter:blur(18px);}
+.nav-inner{display:flex;align-items:center;width:100%;}
+.nav-logo{display:flex;align-items:center;gap:13px;flex-shrink:0;margin-right:64px;}
+.nav-logo img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 10px rgba(198,162,39,.35));}
+.nav-logo-text b{display:block;font-family:var(--fd);font-size:1.25rem;letter-spacing:.07em;color:var(--cream);line-height:1;}
+.nav-logo-text small{display:block;font-size:9px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-top:3px;}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none;flex:1;}
+.nav-cta-li{margin-left:auto;}
+.nav-links a{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);transition:color .2s;}
+.nav-links a:hover,.nav-links a.act{color:var(--brass);}
+.nav-cta-li a{
+  background:var(--brass);color:var(--ink)!important;
+  font-weight:800!important;padding:9px 20px;border-radius:var(--r);
+  transition:background .2s!important;
+}
+.nav-cta-li a:hover{background:var(--brass-h)!important;}
+
+/* hamburger */
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
+.hbg span{display:block;width:24px;height:2px;background:var(--cream);transition:all .3s;}
+.hbg.o span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hbg.o span:nth-child(2){opacity:0;}
+.hbg.o span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:920px){.nav-links{display:none;}.hbg{display:flex;}}
+
+/* drawer */
+#drw{
+  position:fixed;top:var(--nav-h);left:0;right:0;
+  background:rgba(7,7,7,.99);border-top:1px solid var(--rule);
+  padding:28px 22px 36px;z-index:899;display:none;flex-direction:column;
+}
+#drw.o{display:flex;}
+#drw a{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s;}
+#drw a:hover{color:var(--brass);}
+#drw .dcta{margin-top:18px;background:var(--brass);color:var(--ink);font-weight:800;text-align:center;padding:14px;border-radius:var(--r);}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+#hero{
+  position:relative;min-height:100svh;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  /* ── PURE CSS INDUSTRIAL BACKGROUND ── */
+  background-color: #080808;
+  background-image:
+    /* top-left radial brass glow — forge light */
+    radial-gradient(ellipse 60% 55% at 18% 38%, rgba(198,162,39,0.13) 0%, transparent 70%),
+    /* right edge glow — depth */
+    radial-gradient(ellipse 45% 70% at 92% 50%, rgba(198,162,39,0.06) 0%, transparent 65%),
+    /* fine diagonal engineering grid */
+    repeating-linear-gradient(
+      -52deg,
+      transparent,
+      transparent 38px,
+      rgba(255,255,255,0.018) 38px,
+      rgba(255,255,255,0.018) 39px
+    ),
+    repeating-linear-gradient(
+      38deg,
+      transparent,
+      transparent 58px,
+      rgba(255,255,255,0.012) 58px,
+      rgba(255,255,255,0.012) 59px
+    ),
+    /* base dark steel gradient */
+    linear-gradient(155deg, #111111 0%, #080808 45%, #0c0c0c 100%);
+}
+
+/* ── large engineering circle motif — background geometry ── */
+#hero::after {
+  content: '';
+  position: absolute;
+  right: -180px;
+  top: 50%;
+  transform: translateY(-52%);
+  width: 780px;
+  height: 780px;
+  border-radius: 50%;
+  border: 1px solid rgba(198,162,39,0.07);
+  box-shadow:
+    inset 0 0 0 40px rgba(198,162,39,0.025),
+    inset 0 0 0 120px rgba(198,162,39,0.015),
+    inset 0 0 0 240px rgba(198,162,39,0.008);
+  pointer-events: none;
+  z-index: 1;
+}
+/* ── second smaller concentric circle ── */
+#hero::before {
+  content: '';
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-52%);
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  border: 1px solid rgba(198,162,39,0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* overlay — just subtle vignette, no photo/video gradient needed */
+.hero-veil{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(8,8,8,0.0) 0%, rgba(8,8,8,0.0) 55%, rgba(8,8,8,0.95) 100%),
+    linear-gradient(90deg, rgba(8,8,8,0.15) 0%, transparent 100%);
+  z-index:1;
+}
+
+/* ── decorative horizontal engineering rules ── */
+.hero-rules{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;}
+.hr-line{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--brass),rgba(198,162,39,0.08) 40%,transparent 70%);}
+.hr-l1{top:28%;opacity:0.22;}
+.hr-l2{top:55%;opacity:0.12;}
+.hr-l3{top:76%;opacity:0.08;}
+
+/* vertical brass accent line — left edge */
+.hero-accent{
+  position:absolute;left:0;top:15%;bottom:0;width:3px;
+  background:linear-gradient(180deg,transparent 0%,var(--brass) 35%,var(--brass) 100%);
+  z-index:2;
+}
+
+/* hero body */
+.hero-body{
+  position:relative;z-index:3;flex:1;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding-bottom:0;
+  padding-top:calc(var(--nav-h) + 60px);
+}
+.hero-inner{padding-bottom:80px;}
+
+.hero-est{
+  font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:28px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-est::before{content:'';display:block;width:44px;height:1px;background:var(--brass);}
+
+/* BRAND NAME — big, bold, unmistakable */
+.hero-brand{
+  font-family:var(--fd);
+  font-size:clamp(4.8rem,12vw,11.5rem);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  line-height:.88;
+  color:var(--cream);
+  margin-bottom:0;
+}
+
+/* TAGLINE — the signature centrepiece */
+.hero-tagline{
+  font-family:var(--fb);
+  font-size:clamp(.85rem,1.8vw,1.2rem);
+  font-weight:300;
+  letter-spacing:.55em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin:22px 0 36px;
+  display:flex;
+  align-items:center;
+  gap:0;
+}
+.hero-tagline .dot{
+  display:inline-block;
+  width:4px;height:4px;
+  background:var(--brass);
+  border-radius:50%;
+  margin:0 18px;
+  flex-shrink:0;
+}
+
+.hero-sub{
+  font-size:.97rem;font-weight:300;
+  color:rgba(238,233,220,.68);
+  max-width:480px;line-height:1.85;
+  margin-bottom:40px;
+}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* TICKER */
+.hero-ticker{
+  position:relative;z-index:3;
+  background:var(--brass);
+  height:40px;display:flex;align-items:center;overflow:hidden;flex-shrink:0;
+}
+.ticker-track{display:flex;animation:ticker 30s linear infinite;white-space:nowrap;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ti{
+  font-family:var(--fd);font-size:.88rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);padding:0 32px;display:flex;align-items:center;gap:28px;
+}
+.td{width:4px;height:4px;background:var(--ink);border-radius:50%;flex-shrink:0;}
+
+/* STATS BAR */
+.hero-stats{position:relative;z-index:3;background:var(--deep);border-top:1px solid rgba(255,255,255,.04);flex-shrink:0;}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  max-width:1300px;margin:0 auto;padding:0 48px;
+}
+@media(max-width:800px){.stats-grid{grid-template-columns:repeat(2,1fr);padding:0 22px;}}
+.stat{padding:26px 0 26px 26px;border-right:1px solid rgba(255,255,255,.05);position:relative;}
+.stat:first-child{padding-left:0;}
+.stat:last-child{border-right:none;}
+.stat::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--brass);transition:height 1.2s ease;}
+.stat.lit::before{height:100%;}
+.stat-n{font-family:var(--fd);font-size:2.8rem;letter-spacing:.03em;color:var(--brass);line-height:1;}
+.stat-l{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5px;}
+@media(max-width:800px){.stat{padding-left:14px;}}
+
+/* ═══════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════ */
+#about{background:var(--deep);padding:120px 0 0;position:relative;}
+#about::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--brass),transparent 60%);}
+
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:start;margin-bottom:0;}
+@media(max-width:920px){.about-grid{grid-template-columns:1fr;gap:52px;}}
+
+.about-lede{font-size:1.08rem;font-weight:300;color:rgba(238,233,220,.82);line-height:1.85;margin-bottom:20px;}
+.about-body{font-size:.9rem;color:var(--steel);line-height:1.85;margin-bottom:16px;}
+.about-pull{
+  border-left:3px solid var(--brass);padding:18px 22px;
+  background:rgba(198,162,39,.05);margin:28px 0;border-radius:0 var(--r) var(--r) 0;
+}
+.about-pull p{font-family:var(--fs);font-style:italic;font-size:1.04rem;color:var(--brass-h);line-height:1.7;}
+
+/* contact cards */
+
+
+/* about visual */
+.about-vis{position:sticky;top:calc(var(--nav-h)+28px);}
+.about-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);filter:saturate(.82);}
+.about-badge{
+  position:absolute;bottom:-22px;right:-18px;
+  background:var(--brass);color:var(--ink);padding:22px 20px;
+  border-radius:var(--r);text-align:center;min-width:124px;
+  box-shadow:0 8px 40px rgba(0,0,0,.7);
+}
+.about-badge b{display:block;font-family:var(--fd);font-size:2.9rem;letter-spacing:.03em;line-height:1;}
+.about-badge small{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
+@media(max-width:920px){.about-vis{position:static;}.about-badge{bottom:-12px;right:-4px;}}
+
+/* vision/mission */
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:96px;}
+@media(max-width:700px){.vm-grid{grid-template-columns:1fr;}}
+.vm-card{background:var(--surface);padding:50px 44px;position:relative;overflow:hidden;}
+.vm-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.vm-card:hover::after{transform:scaleX(1);}
+.vm-hd{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.vm-ico{width:44px;height:44px;background:rgba(198,162,39,.1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:var(--brass);}
+.vm-card h3{font-family:var(--fd);font-size:1.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--cream);}
+.vm-card p{font-size:.88rem;color:var(--steel);line-height:1.85;}
+@media(max-width:700px){.vm-card{padding:36px 26px;}}
+
+/* ═══════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════ */
+#services{background:var(--ink);padding:120px 0;}
+.svc-hd{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px;}
+@media(max-width:768px){.svc-hd{grid-template-columns:1fr;gap:22px;}}
+.svc-hd p{font-size:.92rem;color:var(--steel);line-height:1.8;}
+
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+@media(max-width:800px){.svc-grid{grid-template-columns:1fr;}}
+.svc-card{background:var(--surface);display:flex;flex-direction:column;overflow:hidden;transition:background .3s;}
+.svc-card:hover{background:var(--card);}
+.svc-med{position:relative;aspect-ratio:16/9;overflow:hidden;}
+.svc-med video,.svc-med img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .4s;filter:saturate(.75) brightness(.88);}
+.svc-card:hover .svc-med video,.svc-card:hover .svc-med img{transform:scale(1.05);filter:saturate(.95) brightness(1);}
+.svc-grad{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(22,22,22,.65) 100%);}
+.svc-no{position:absolute;top:13px;left:13px;font-family:var(--fd);font-size:.82rem;letter-spacing:.1em;color:var(--brass);background:rgba(7,7,7,.75);padding:4px 10px;border-radius:1px;}
+.svc-body{padding:28px 32px 32px;flex:1;display:flex;flex-direction:column;}
+.svc-body h3{font-family:var(--fd);font-size:1.85rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);margin-bottom:11px;}
+.svc-body p{font-size:.88rem;color:var(--steel);line-height:1.8;flex:1;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;}
+
+/* ═══════════════════════════════════════════
+   CAPABILITIES
+═══════════════════════════════════════════ */
+#capabilities{background:var(--deep);padding:120px 0;position:relative;overflow:hidden;}
+.cap-watermark{
+  position:absolute;right:-40px;top:50%;transform:translateY(-50%) rotate(90deg);
+  font-family:var(--fd);font-size:11vw;letter-spacing:.14em;
+  color:rgba(255,255,255,.016);white-space:nowrap;pointer-events:none;user-select:none;
+}
+.cap-intro{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:start;margin-bottom:70px;}
+@media(max-width:900px){.cap-intro{grid-template-columns:1fr;gap:36px;}}
+.cap-intro p{font-size:.92rem;color:var(--steel);line-height:1.85;}
+.cap-intro p+p{margin-top:15px;}
+
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+@media(max-width:1060px){.cap-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:580px){.cap-grid{grid-template-columns:1fr;}}
+
+.cap-cell{background:var(--surface);padding:30px 26px;border-bottom:2px solid transparent;position:relative;transition:border-color .3s,background .3s;}
+.cap-cell::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--brass);transition:height .4s ease;}
+.cap-cell:hover{border-bottom-color:var(--brass);background:var(--card);}
+.cap-cell:hover::before{height:100%;}
+.cap-ico{width:36px;height:36px;color:var(--brass);margin-bottom:15px;}
+.cap-cell h4{font-family:var(--fd);font-size:1.15rem;letter-spacing:.05em;text-transform:uppercase;color:var(--cream);margin-bottom:9px;}
+.cap-cell p{font-size:.84rem;color:var(--steel);line-height:1.75;}
+
+.cap-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:70px;}
+@media(max-width:800px){.cap-strip{grid-template-columns:1fr;}}
+.cap-vid{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--surface);}
+@media(max-width:800px){.cap-vid{aspect-ratio:16/9;}}
+.cap-vid video{width:100%;height:100%;object-fit:cover;filter:brightness(.78) saturate(.8);transition:filter .4s;}
+.cap-vid:hover video{filter:brightness(.94) saturate(1);}
+.cap-vg{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,7,.9) 0%,transparent 55%);}
+.cap-vl{position:absolute;bottom:0;left:0;right:0;padding:20px 18px;}
+.cap-vl h5{font-family:var(--fd);font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);line-height:1.2;}
+.cap-vl span{display:block;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-top:5px;}
+
+/* ═══════════════════════════════════════════
+   EQUIPMENT
+═══════════════════════════════════════════ */
+#equipment{background:var(--ink);padding:120px 0;}
+.eq-hd{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:56px;}
+@media(max-width:768px){.eq-hd{grid-template-columns:1fr;gap:22px;}}
+.eq-hd p{font-size:.92rem;color:var(--steel);line-height:1.8;}
+
+.eq-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:var(--r);margin-bottom:60px;}
+.eq-tbl{width:100%;border-collapse:collapse;min-width:580px;}
+.eq-tbl th{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);background:var(--surface);padding:14px 18px;text-align:left;border-bottom:1px solid var(--rule);white-space:nowrap;}
+.eq-tbl td{font-size:.87rem;color:var(--steel);padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.04);}
+.eq-tbl tr:last-child td{border-bottom:none;}
+.eq-tbl tr:hover td{background:var(--surface);color:var(--cream);}
+.eq-tbl td:first-child{font-weight:600;color:var(--cream);white-space:nowrap;}
+.qty{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;background:rgba(198,162,39,.1);color:var(--brass);padding:3px 8px;border-radius:1px;}
+
+.eq-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+@media(max-width:900px){.eq-photos{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.eq-photos{grid-template-columns:1fr;}}
+.eq-ph{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer;}
+.eq-ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .5s;filter:saturate(.6) brightness(.85);}
+.eq-ph:hover img{transform:scale(1.07);filter:saturate(1) brightness(1);}
+.eq-ph-cap{position:absolute;inset:0;background:rgba(7,7,7,0);display:flex;flex-direction:column;justify-content:flex-end;padding:15px;opacity:0;transition:opacity .3s,background .3s;}
+.eq-ph:hover .eq-ph-cap{opacity:1;background:rgba(7,7,7,.58);}
+.eq-ph-cap span{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);}
+
+/* ═══════════════════════════════════════════
+   WORK
+═══════════════════════════════════════════ */
+#work{background:var(--deep);padding:120px 0;}
+.work-hd{text-align:center;max-width:620px;margin:0 auto 64px;}
+.work-hd .sec-eyebrow{justify-content:center;}
+.work-hd .sec-eyebrow::after{display:none;}
+.work-hd .sec-eyebrow::before{content:'';flex:0 0 36px;height:1px;background:var(--brass);}
+.work-hd p{font-size:.92rem;color:var(--steel);margin-top:14px;line-height:1.8;}
+
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+@media(max-width:700px){.vgrid{grid-template-columns:1fr;}}
+.vc{position:relative;overflow:hidden;background:var(--surface);}
+.vc.featured{grid-column:1/-1;}
+.vc video{width:100%;display:block;filter:brightness(.85);transition:filter .4s;}
+.vc:hover video{filter:brightness(1);}
+.vc.featured video{aspect-ratio:16/9;object-fit:cover;}
+.vc:not(.featured) video{aspect-ratio:9/16;object-fit:cover;max-height:460px;}
+.vc-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(7,7,7,.92) 0%,transparent 100%);padding:34px 22px 18px;}
+.vc-lbl h4{font-family:var(--fd);font-size:1.1rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);}
+.vc-lbl p{font-size:11px;color:var(--muted);margin-top:4px;}
+
+/* ═══════════════════════════════════════════
+   CLIENTS
+═══════════════════════════════════════════ */
+#clients{background:var(--ink);padding:120px 0;}
+.cl-hd{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:68px;}
+@media(max-width:768px){.cl-hd{grid-template-columns:1fr;gap:22px;}}
+.cl-hd p{font-size:.92rem;color:var(--steel);line-height:1.8;}
+
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:68px;}
+@media(max-width:900px){.cl-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.cl-grid{grid-template-columns:1fr;}}
+.cl-card{background:var(--surface);padding:34px 28px;border-top:2px solid transparent;transition:border-color .3s,background .3s;}
+.cl-card:hover{border-top-color:var(--brass);background:var(--card);}
+.cl-name{font-family:var(--fd);font-size:1.35rem;letter-spacing:.05em;text-transform:uppercase;color:var(--cream);margin-bottom:5px;}
+.cl-sect{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:12px;}
+.cl-card p{font-size:.85rem;color:var(--steel);line-height:1.75;}
+
+.cl-quote{
+  background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);
+  padding:44px 52px;display:flex;align-items:center;gap:52px;
+}
+@media(max-width:768px){.cl-quote{flex-direction:column;padding:30px 26px;gap:28px;}}
+.cl-quote blockquote{
+  font-family:var(--fs);font-style:italic;font-size:1.12rem;
+  color:rgba(238,233,220,.82);line-height:1.7;flex:1;
+}
+.cl-quote blockquote::before{content:'\201C';font-size:3rem;color:var(--brass);line-height:.5;display:block;margin-bottom:14px;}
+.cl-qcta{flex-shrink:0;}
+
+/* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
+#contact{background:var(--deep);padding:120px 0;position:relative;}
+#contact::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--brass),transparent 60%);}
+.ct-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;}
+@media(max-width:900px){.ct-grid{grid-template-columns:1fr;gap:52px;}}
+.ct-left .sec-title{margin-bottom:18px;}
+.ct-left>p{font-size:.92rem;color:var(--steel);line-height:1.8;margin-bottom:36px;}
+
+.ct-list{display:flex;flex-direction:column;gap:1px;}
+.ct-row{background:var(--surface);display:flex;align-items:flex-start;gap:14px;padding:16px 18px;transition:background .2s;}
+.ct-row:hover{background:var(--card);}
+.ct-ico{width:34px;height:34px;background:rgba(198,162,39,.1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--brass);}
+.ct-txt b{display:block;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:4px;}
+.ct-txt span,.ct-txt a{font-size:.88rem;color:var(--steel);display:block;transition:color .2s;}
+.ct-txt a:hover{color:var(--cream);}
+
+.ct-form{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:44px 40px;}
+@media(max-width:580px){.ct-form{padding:28px 20px;}}
+.ct-form h3{font-family:var(--fd);font-size:1.85rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);margin-bottom:26px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:540px){.f-row{grid-template-columns:1fr;}}
+.fg{margin-bottom:14px;}
+.fg label{display:block;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:var(--card);border:1px solid rgba(255,255,255,.08);
+  color:var(--cream);font-family:var(--fb);font-size:.9rem;
+  padding:12px 14px;border-radius:var(--r);outline:none;transition:border-color .2s;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--brass);}
+.fg select{cursor:pointer;}.fg select option{background:var(--card);}
+.fg textarea{resize:vertical;min-height:106px;}
+.f-btn{
+  width:100%;background:var(--brass);color:var(--ink);
+  font-family:var(--fb);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  border:none;padding:15px;border-radius:var(--r);cursor:pointer;
+  transition:background .22s,transform .22s;margin-top:4px;
+}
+.f-btn:hover{background:var(--brass-h);transform:translateY(-2px);}
+#f-ok{display:none;text-align:center;padding:32px;color:var(--brass);font-size:1rem;font-weight:600;line-height:1.6;}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer{background:var(--ink);border-top:1px solid var(--rule);}
+.footer-main{padding:68px 0 48px;display:grid;grid-template-columns:1.55fr 1fr 1fr;gap:60px;}
+@media(max-width:900px){.footer-main{grid-template-columns:1fr;gap:40px;}}
+.fb-brand img{width:52px;height:52px;object-fit:contain;margin-bottom:13px;}
+.fb-brand b{display:block;font-family:var(--fd);font-size:1.55rem;letter-spacing:.05em;color:var(--cream);margin-bottom:2px;}
+.fb-brand em{display:block;font-style:normal;font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-bottom:8px;}
+.fb-brand small{display:block;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:15px;}
+.fb-brand p{font-size:.85rem;color:var(--muted);max-width:290px;line-height:1.7;}
+.fc h5{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:17px;}
+.fc ul{list-style:none;}
+.fc ul li{margin-bottom:10px;}
+.fc ul li a{font-size:.86rem;color:var(--muted);transition:color .2s;}
+.fc ul li a:hover{color:var(--cream);}
+.fc p{font-size:.86rem;color:var(--muted);line-height:1.75;}
+.fc a{font-size:.86rem;color:var(--muted);display:block;margin-top:5px;transition:color .2s;}
+.fc a:hover{color:var(--cream);}
+
+.footer-bot{border-top:1px solid rgba(255,255,255,.04);padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-bot p{font-size:11px;color:var(--muted);margin:0;}
+.footer-bot span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);}
+
+/* ═══════════════════════════════════════════
+   LIGHTBOX
+═══════════════════════════════════════════ */
+#lb{display:none;position:fixed;inset:0;background:rgba(4,4,4,.97);z-index:9999;justify-content:center;align-items:center;padding:20px;}
+#lb.on{display:flex;}
+#lb img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:var(--r);}
+#lb-x{position:absolute;top:18px;right:26px;background:none;border:none;color:var(--steel);font-size:2.4rem;cursor:pointer;opacity:.7;transition:opacity .2s;line-height:1;}
+#lb-x:hover{opacity:1;color:var(--cream);}
+
+/* ═══════════════════════════════════════════
+   WHATSAPP FLOAT
+═══════════════════════════════════════════ */
+.wa{position:fixed;bottom:26px;right:26px;z-index:800;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.55);transition:transform .25s,box-shadow .25s;}
+.wa:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(0,0,0,.65);}
+.wa svg{width:27px;height:27px;fill:white;}
+@media(max-width:580px){.wa{bottom:16px;right:16px;width:46px;height:46px;}}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/img/logo-transparent.png" alt="Mohan Brothers crest">
+        <div class="nav-logo-text">
+          <b>Mohan Brothers</b>
+          <small>Est. 1937 · Jamshedpur</small>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#equipment">Equipment</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li class="nav-cta-li"><a href="#contact">Enquire Now</a></li>
+      </ul>
+      <button class="hbg" id="hbg" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- mobile drawer -->
+<div id="drw">
+  <a href="#about" class="dl">About</a>
+  <a href="#services" class="dl">Services</a>
+  <a href="#capabilities" class="dl">Capabilities</a>
+  <a href="#equipment" class="dl">Equipment</a>
+  <a href="#work" class="dl">Our Work</a>
+  <a href="#clients" class="dl">Clients</a>
+  <a href="#contact" class="dl dcta">Enquire Now</a>
+</div>
+
+<!-- ════ HERO ════ -->
+<section id="hero">
+  <div class="hero-veil"></div>
+  <div class="hero-accent"></div>
+  <!-- decorative horizontal engineering rules -->
+  <div class="hero-rules" aria-hidden="true">
+    <div class="hr-line hr-l1"></div>
+    <div class="hr-line hr-l2"></div>
+    <div class="hr-line hr-l3"></div>
+  </div>
+
+  <div class="hero-body">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-est">Established 1937 &nbsp;·&nbsp; Jamshedpur, Jharkhand, India</div>
+
+        <!-- BRAND NAME -->
+        <div class="hero-brand">Mohan<br>Brothers</div>
+
+        <!-- TAGLINE — signature centrepiece -->
+        <div class="hero-tagline">
+          Expertise<span class="dot"></span>Commitment<span class="dot"></span>Value
+        </div>
+
+        <p class="hero-sub">Industrial machining, gear cutting, gearbox overhaul and heavy fabrication — engineered to the exacting demands of India's steel, mining and infrastructure sectors for over eight decades.</p>
+
+        <div class="hero-ctas">
+          <a href="#capabilities" class="btn btn-gold">
+            Explore Capabilities
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ticker -->
+  <div class="hero-ticker">
+    <div class="ticker-track">
+      <span class="ti">Expertise. Commitment. Value.<span class="td"></span></span>
+      <span class="ti">Precision Machining<span class="td"></span></span>
+      <span class="ti">Gear Cutting &amp; Hobbing<span class="td"></span></span>
+      <span class="ti">Heavy Fabrication<span class="td"></span></span>
+      <span class="ti">Gearbox Overhaul<span class="td"></span></span>
+      <span class="ti">Mechanical Maintenance<span class="td"></span></span>
+      <span class="ti">Shaft Turning up to 20 ft<span class="td"></span></span>
+      <span class="ti">100-Tonne Hydraulic Press<span class="td"></span></span>
+      <span class="ti">Reverse Engineering<span class="td"></span></span>
+      <!-- duplicate for seamless loop -->
+      <span class="ti">Expertise. Commitment. Value.<span class="td"></span></span>
+      <span class="ti">Precision Machining<span class="td"></span></span>
+      <span class="ti">Gear Cutting &amp; Hobbing<span class="td"></span></span>
+      <span class="ti">Heavy Fabrication<span class="td"></span></span>
+      <span class="ti">Gearbox Overhaul<span class="td"></span></span>
+      <span class="ti">Mechanical Maintenance<span class="td"></span></span>
+      <span class="ti">Shaft Turning up to 20 ft<span class="td"></span></span>
+      <span class="ti">100-Tonne Hydraulic Press<span class="td"></span></span>
+      <span class="ti">Reverse Engineering<span class="td"></span></span>
+    </div>
+  </div>
+
+  <!-- stats -->
+  <div class="hero-stats">
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-n">87+</div><div class="stat-l">Years of Operation</div></div>
+      <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Major Industrial Clients</div></div>
+      <div class="stat"><div class="stat-n">20 ft</div><div class="stat-l">Max Lathe Bed Capacity</div></div>
+      <div class="stat"><div class="stat-n">100 T</div><div class="stat-l">Hydraulic Press Capacity</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ABOUT ════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <!-- text -->
+      <div class="rv">
+        <div class="sec-eyebrow">Company Profile</div>
+        <h2 class="sec-title">Eight Decades<br>of Industrial<br>Heritage</h2>
+        <div class="sec-rule"></div>
+        <p class="about-lede">Founded in 1937 in Sakchi, Jamshedpur — the steel city of India — Mohan Brothers has been a cornerstone of the region's heavy industrial ecosystem for over eight decades.</p>
+        <p class="about-body">We specialise in mechanical maintenance, precision machining, gear cutting, gearbox services and structural fabrication, serving some of the most demanding plants and facilities in eastern India. Our workshop is equipped with a fleet of heavy-duty lathes (up to 20 feet), boring machines, gear hobbing machines, milling machines, a 100-tonne hydraulic press, and full fabrication tooling — all operated by experienced craftsmen who understand the tolerance and reliability requirements of steel plants, mining operations and heavy manufacturing.</p>
+        <p class="about-body">As Jamshedpur's industrial landscape has grown from a single steel mill into a sprawling ecosystem of manufacturing, mining and engineering, Mohan Brothers has grown alongside it — continually investing in capability and building lasting partnerships with clients who rely on us when critical equipment needs to be repaired, modified or manufactured to tight specifications.</p>
+        <div class="about-pull">
+          <p>Mohan Brothers aims to acquire increasingly complex mechanical fabrication and machining contracts, expand its client base across India's major industrial corridors, and establish itself as one of the leading independent heavy engineering workshops in the country — carrying the legacy of 87 years of honest craftsmanship into India's next industrial era.</p>
+        </div>
+
+
+      </div>
+
+      <!-- visual -->
+      <div class="about-vis rv d2">
+        <div style="position:relative;">
+          <img class="about-img" src="assets/img/large-drum-machining.jpg" alt="Heavy industrial drum being machined at Mohan Brothers workshop, Jamshedpur">
+          <div class="about-badge"><b>1937</b><small>Founded</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- vision / mission -->
+    <div class="vm-grid rv">
+      <div class="vm-card">
+        <div class="vm-hd">
+          <div class="vm-ico">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <h3>Our Vision</h3>
+        </div>
+        <p>To be recognised as the premier independent heavy engineering workshop serving India's core industrial sectors — steel, mining, power and infrastructure — known for precision, reliability and the ability to solve the most technically demanding machining and fabrication challenges that large plants face. We envision Mohan Brothers as a nationally known name in heavy industrial engineering, carrying 87 years of honest craftsmanship into India's next industrial era.</p>
+      </div>
+      <div class="vm-card">
+        <div class="vm-hd">
+          <div class="vm-ico">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <h3>Our Mission</h3>
+        </div>
+        <p>To deliver precision machining, gear cutting and heavy fabrication solutions that keep our clients' plants running at peak performance — on time, to specification and at competitive cost. We commit to maintaining a skilled workforce, investing in machine capability and upholding the quality of workmanship that Tata Steel, Hindustan Copper, Usha Martin, Thriveni Earthmovers and our broader client base have depended on for generations. Every job we take carries the full weight of our 87-year reputation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SERVICES ════ -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-hd rv">
+      <div>
+        <div class="sec-eyebrow">What We Do</div>
+        <h2 class="sec-title">Core<br>Services</h2>
+      </div>
+      <p>From a single precision shaft to a complete gearbox overhaul, from a worn gear to a fabricated structural frame — we have the machines, the skills and the 87-year track record to deliver. All critical operations are carried out in-house at our Jamshedpur workshop with no subcontracting.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card rv">
+        <div class="svc-med">
+          <video autoplay muted loop playsinline preload="metadata"><source src="assets/video/lathe-turning-sparks.mp4" type="video/mp4"></video>
+          <div class="svc-grad"></div><div class="svc-no">01</div>
+        </div>
+        <div class="svc-body">
+          <h3>Mechanical Maintenance</h3>
+          <p>Complete industrial overhauling, in-house and on-site repair of rotating equipment, pumps, gearboxes, conveyors and heavy plant machinery. We handle emergency breakdowns and scheduled maintenance shutdowns — minimising plant downtime from the moment we get the call.</p>
+          <div class="svc-tags">
+            <span class="tag">Gearbox Overhaul</span><span class="tag">Bearing Replacement</span>
+            <span class="tag">Shaft Repair</span><span class="tag">Emergency Breakdown</span><span class="tag">Preventive Maintenance</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-card rv d1">
+        <div class="svc-med">
+          <video autoplay muted loop playsinline preload="metadata"><source src="assets/video/drum-turning-finish.mp4" type="video/mp4"></video>
+          <div class="svc-grad"></div><div class="svc-no">02</div>
+        </div>
+        <div class="svc-body">
+          <h3>Precision Machining</h3>
+          <p>Turning, milling, drilling, boring and grinding to tight tolerances on our fleet of heavy-duty machine tools. Shafts and components up to 20 feet in length. We bring full machine-shop capability to every job — with the craftsmanship built over 87 years to match.</p>
+          <div class="svc-tags">
+            <span class="tag">Heavy Turning</span><span class="tag">Precision Boring</span>
+            <span class="tag">Surface Milling</span><span class="tag">Radial Drilling</span><span class="tag">Shaping &amp; Planing</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-card rv d2">
+        <div class="svc-med">
+          <video autoplay muted loop playsinline preload="metadata"><source src="assets/video/gear-hobbing-closeup.mp4" type="video/mp4"></video>
+          <div class="svc-grad"></div><div class="svc-no">03</div>
+        </div>
+        <div class="svc-body">
+          <h3>Gear Cutting &amp; Gearbox Services</h3>
+          <p>Spur and helical gear production on our dedicated gear hobbing machine. Comprehensive gearbox strip-down, dimensional inspection, component replacement and precision reassembly. Decades of experience producing and refurbishing gears for steel plant and mining applications.</p>
+          <div class="svc-tags">
+            <span class="tag">Spur Gears</span><span class="tag">Helical Gears</span>
+            <span class="tag">Gear Hobbing</span><span class="tag">Gearbox Rebuild</span><span class="tag">Bronze Bushing</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-card rv d3">
+        <div class="svc-med">
+          <img src="assets/img/karam-boring-fabrication.jpg" alt="Heavy fabrication at Mohan Brothers Jamshedpur">
+          <div class="svc-grad"></div><div class="svc-no">04</div>
+        </div>
+        <div class="svc-body">
+          <h3>Heavy Fabrication</h3>
+          <p>Custom steel structures, frames, equipment housings and assemblies fabricated to drawing or reverse-engineered from worn originals. We handle large weldments and structural components requiring both machining and fabrication — a combination delivered entirely under one roof.</p>
+          <div class="svc-tags">
+            <span class="tag">Structural Frames</span><span class="tag">Equipment Housings</span>
+            <span class="tag">Weldments</span><span class="tag">Reverse Engineering</span><span class="tag">Custom Assemblies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CAPABILITIES ════ -->
+<section id="capabilities">
+  <div class="cap-watermark">CAPABILITIES</div>
+  <div class="wrap">
+    <div class="cap-intro rv">
+      <div>
+        <div class="sec-eyebrow">Technical Depth</div>
+        <h2 class="sec-title">Full-Spectrum<br>Engineering</h2>
+      </div>
+      <div>
+        <p>A Tata Steel or L&amp;T engineering team needs more than a vendor — they need a workshop partner with the technical breadth to handle whatever the plant throws at them. At Mohan Brothers, decades of hands-on experience across every discipline of mechanical engineering means we understand the engineering context behind every job, not just the machining requirements.</p>
+        <p>Complex, multi-operation components are handled entirely in-house — from rough casting to final inspection — so clients never have to coordinate across multiple vendors or accept subcontracted quality on critical parts.</p>
+      </div>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-cell rv">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><circle cx="19" cy="12" r="3"/><circle cx="5" cy="12" r="3"/></svg>
+        <h4>Shaft Turning &amp; Grinding</h4>
+        <p>Precision turning of shafts up to 20 feet on our heavy-duty lathe fleet. Stepped shafts, flanged shafts, journal restoration and keyway cutting all performed in-house to close tolerances.</p>
+      </div>
+      <div class="cap-cell rv d1">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <h4>Horizontal Boring</h4>
+        <p>100mm horizontal boring machine for precision bore-sizing of heavy castings, gearbox housings and bearing housings requiring close-tolerance cylindrical bores that cannot be achieved on a lathe.</p>
+      </div>
+      <div class="cap-cell rv d2">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <h4>Gear Hobbing &amp; Profiling</h4>
+        <p>Production of spur and helical gears using our dedicated gear hobbing machine. Replacement gears produced to original specifications from drawings or from worn originals used as pattern.</p>
+      </div>
+      <div class="cap-cell rv">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="5" rx="1"/><path d="M3 8v13h18V8"/></svg>
+        <h4>Surface Planing &amp; Milling</h4>
+        <p>8-foot planer machine and two milling machines for surface finishing, slot cutting, step machining and flat-surface generation on large plate components and structural parts.</p>
+      </div>
+      <div class="cap-cell rv d1">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg>
+        <h4>Heavy Press Work</h4>
+        <p>100-tonne hydraulic press for bearing fitting and removal, bush pressing, interference-fit assembly, straightening of shafts and structural members, and press-forming operations.</p>
+      </div>
+      <div class="cap-cell rv d2">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <h4>Slotting &amp; Shaping</h4>
+        <p>Dedicated slotter and shaper machines for internal keyway cutting, slot generation, spline profiles and intricate internal contour work not achievable on a lathe or milling machine alone.</p>
+      </div>
+      <div class="cap-cell rv">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.87"/></svg>
+        <h4>Reverse Engineering</h4>
+        <p>When OEM spares are unavailable or lead times are unacceptable, we reverse-engineer worn or damaged components from physical measurement — producing functional replacements that meet or exceed original specifications.</p>
+      </div>
+      <div class="cap-cell rv d1">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <h4>Structural Fabrication</h4>
+        <p>Custom steel structures, machine bases, conveyor frames, equipment guards and support structures fabricated to client drawings or developed collaboratively with your engineering team.</p>
+      </div>
+      <div class="cap-cell rv d2">
+        <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h4>Gearbox Overhaul &amp; Assembly</h4>
+        <p>Complete strip-down, dimensional inspection, component replacement — gears, bearings, seals, bushings — and precision reassembly to OEM clearances. Trial-run testing before return to plant.</p>
+      </div>
+    </div>
+
+    <!-- video strip -->
+    <div class="cap-strip">
+      <div class="cap-vid rv">
+        <video autoplay muted loop playsinline preload="metadata"><source src="assets/video/plate-machining.mp4" type="video/mp4"></video>
+        <div class="cap-vg"></div>
+        <div class="cap-vl"><h5>Planer Machine<br>Surface Finishing</h5><span>Machining · Steel Plate</span></div>
+      </div>
+      <div class="cap-vid rv d1">
+        <video autoplay muted loop playsinline preload="metadata"><source src="assets/video/flywheel-bushing-boring.mp4" type="video/mp4"></video>
+        <div class="cap-vg"></div>
+        <div class="cap-vl"><h5>Flywheel Bronze<br>Bushing Boring</h5><span>Boring · Bronze Bushing</span></div>
+      </div>
+      <div class="cap-vid rv d2">
+        <video autoplay muted loop playsinline preload="metadata"><source src="assets/video/lathe-headstock-detail.mp4" type="video/mp4"></video>
+        <div class="cap-vg"></div>
+        <div class="cap-vl"><h5>Heavy Lathe<br>Component Turning</h5><span>Turning · Large Bore</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ EQUIPMENT ════ -->
+<section id="equipment">
+  <div class="wrap">
+    <div class="eq-hd rv">
+      <div>
+        <div class="sec-eyebrow">Machine Inventory</div>
+        <h2 class="sec-title">Our<br>Industrial<br>Equipment</h2>
+      </div>
+      <p>A well-equipped machine shop is the foundation of reliable delivery. Our inventory spans heavy turning, boring, gear cutting, pressing and milling — giving us the breadth to handle complex multi-operation jobs entirely in-house. All machines are maintained and operational.</p>
+    </div>
+
+    <div class="eq-wrap rv">
+      <table class="eq-tbl">
+        <thead>
+          <tr><th>#</th><th>Machine</th><th>Specification</th><th>Qty</th><th>Primary Application</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>01</td><td>Lathe Machine — 6 ft bed</td><td>6-foot bed length</td><td><span class="qty">×1</span></td><td>Precision turning of medium shafts &amp; components</td></tr>
+          <tr><td>02</td><td>Lathe Machine — 8 ft bed</td><td>8-foot bed length</td><td><span class="qty">×1</span></td><td>Medium-heavy shaft turning</td></tr>
+          <tr><td>03</td><td>Lathe Machine — 10 ft bed</td><td>10-foot bed length</td><td><span class="qty">×1</span></td><td>Heavy shaft and roll turning</td></tr>
+          <tr><td>04</td><td>Lathe Machine — 12 ft bed</td><td>12-foot bed length</td><td><span class="qty">×1</span></td><td>Long shaft turning, tapered shafts</td></tr>
+          <tr><td>05</td><td>Lathe Machine — 20 ft bed</td><td>20-foot bed length</td><td><span class="qty">×1</span></td><td>Extra-long rolls, conveyor shafts, industrial drums</td></tr>
+          <tr><td>06</td><td>Shaper Machine</td><td>Standard</td><td><span class="qty">×1</span></td><td>Flat surface shaping, keyways, slots</td></tr>
+          <tr><td>07</td><td>Slotter Machine</td><td>Standard</td><td><span class="qty">×1</span></td><td>Internal keyways, splines, contour slots</td></tr>
+          <tr><td>08</td><td>Milling Machine</td><td>Vertical / horizontal</td><td><span class="qty">×2</span></td><td>Face milling, slot milling, step machining</td></tr>
+          <tr><td>09</td><td>Gear Hobbing Machine</td><td>Standard</td><td><span class="qty">×1</span></td><td>Spur &amp; helical gear production</td></tr>
+          <tr><td>10</td><td>Planer Machine — 8 ft table</td><td>8-foot table</td><td><span class="qty">×1</span></td><td>Large flat-surface finishing, structural components</td></tr>
+          <tr><td>11</td><td>Horizontal Boring Machine</td><td>100mm boring bar</td><td><span class="qty">×1</span></td><td>Precision bore finishing on heavy castings &amp; housings</td></tr>
+          <tr><td>12</td><td>Pillar Drill Machine</td><td>40mm capacity</td><td><span class="qty">×2</span></td><td>Drilling, reaming, tapping</td></tr>
+          <tr><td>13</td><td>Radial Drill Machine</td><td>70mm capacity</td><td><span class="qty">×1</span></td><td>Large-hole drilling on heavy components</td></tr>
+          <tr><td>14</td><td>Hydraulic Press</td><td>100-tonne capacity</td><td><span class="qty">×1</span></td><td>Bearing fitting/removal, bush pressing, straightening</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="eq-photos">
+      <div class="eq-ph rv"    onclick="openLb(this)"><img src="assets/img/lathe-large-shaft-01.jpg"      alt="20-foot lathe — large shaft turning"><div class="eq-ph-cap"><span>20 ft Lathe · Shaft Turning</span></div></div>
+      <div class="eq-ph rv d1" onclick="openLb(this)"><img src="assets/img/sprocket-gear-fabrication.jpg" alt="Large sprocket gear for earthmoving equipment"><div class="eq-ph-cap"><span>Gear Cutting · Sprocket</span></div></div>
+      <div class="eq-ph rv d2" onclick="openLb(this)"><img src="assets/img/horizontal-boring-casing.jpg"  alt="Horizontal boring machine on heavy casing"><div class="eq-ph-cap"><span>Horizontal Boring · Casing</span></div></div>
+      <div class="eq-ph rv d1" onclick="openLb(this)"><img src="assets/img/precision-flange-machining.jpg" alt="Precision flange and bronze bushing machining"><div class="eq-ph-cap"><span>Precision Flange Machining</span></div></div>
+      <div class="eq-ph rv d2" onclick="openLb(this)"><img src="assets/img/fabricated-spoked-wheel.jpg"   alt="Fabricated industrial spoked wheel"><div class="eq-ph-cap"><span>Fabrication · Spoked Wheel</span></div></div>
+      <div class="eq-ph rv d3" onclick="openLb(this)"><img src="assets/img/large-drum-machining.jpg"      alt="Large industrial drum on boring machine"><div class="eq-ph-cap"><span>Boring · Industrial Drum</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WORK ════ -->
+<section id="work">
+  <div class="wrap">
+    <div class="work-hd rv">
+      <div class="sec-eyebrow">Live from the Shop Floor</div>
+      <h2 class="sec-title">Our Work<br>in Action</h2>
+      <p>Actual footage from our Jamshedpur workshop — no renders, no stock footage. This is the precision and capability behind every enquiry.</p>
+    </div>
+    <div class="vgrid">
+      <div class="vc featured rv">
+        <video autoplay muted loop playsinline preload="metadata" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+          <source src="assets/video/large-shaft-hero.mp4" type="video/mp4">
+        </video>
+        <div class="vc-lbl"><h4>20-Foot Lathe · Heavy Shaft Turning</h4><p>Large diameter industrial shaft precision-turned on our flagship 20 ft lathe</p></div>
+      </div>
+      <div class="vc rv">
+        <video autoplay muted loop playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;max-height:460px;">
+          <source src="assets/video/gear-hobbing-closeup.mp4" type="video/mp4">
+        </video>
+        <div class="vc-lbl"><h4>Gear Hobbing · Helical Teeth</h4><p>Hobbing machine cutting precision gear teeth with coolant flow</p></div>
+      </div>
+      <div class="vc rv d1">
+        <video autoplay muted loop playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;max-height:460px;">
+          <source src="assets/video/gear-cutting-detail.mp4" type="video/mp4">
+        </video>
+        <div class="vc-lbl"><h4>Gear Cutting · Spur Gear</h4><p>Close-up of gear tooth formation — tolerance-critical hobbing operation</p></div>
+      </div>
+      <div class="vc rv d2">
+        <video autoplay muted loop playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;max-height:460px;">
+          <source src="assets/video/drum-turning-finish.mp4" type="video/mp4">
+        </video>
+        <div class="vc-lbl"><h4>Drum Surface Finish Turning</h4><p>Fine finishing pass — golden swarf confirms correct feed and speed parameters</p></div>
+      </div>
+      <div class="vc rv d3">
+        <video autoplay muted loop playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;max-height:460px;">
+          <source src="assets/video/lathe-turning-sparks.mp4" type="video/mp4">
+        </video>
+        <div class="vc-lbl"><h4>Conical Component Roughing</h4><p>Heavy roughing pass — sparks indicate aggressive stock removal at speed</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CLIENTS ════ -->
+<section id="clients">
+  <div class="wrap">
+    <div class="cl-hd rv">
+      <div>
+        <div class="sec-eyebrow">Our Client Roster</div>
+        <h2 class="sec-title">Trusted by<br>India's Industrial<br>Leaders</h2>
+      </div>
+      <p>From our earliest days we have had the honour of serving some of India's most demanding industrial organisations. These relationships — many spanning multiple decades — are built on consistent delivery, technical competence and a genuine understanding of what plant engineers need from a workshop partner.</p>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card rv">
+        <div class="cl-name">Tata Steel Ltd.</div>
+        <div class="cl-sect">Integrated Steel Plant</div>
+        <p>One of the world's most sophisticated integrated steel plants, headquartered in Jamshedpur. Precision machining and fabrication support for plant maintenance operations across the facility.</p>
+      </div>
+      <div class="cl-card rv d1">
+        <div class="cl-name">Hindustan Copper Ltd.</div>
+        <div class="cl-sect">Mining &amp; Metals</div>
+        <p>India's only primary copper producer. Heavy machining and mechanical maintenance support for mining and smelting operations where equipment reliability is mission-critical.</p>
+      </div>
+      <div class="cl-card rv d2">
+        <div class="cl-name">Tata BlueScope Steel</div>
+        <div class="cl-sect">Steel Processing</div>
+        <p>Manufacturer of COLORBOND® and ZINCALUME® steel. Machining and fabrication services supporting their Jamshedpur processing facility's maintenance requirements.</p>
+      </div>
+      <div class="cl-card rv d1">
+        <div class="cl-name">Usha Martin Ltd.</div>
+        <div class="cl-sect">Wire Rope &amp; Steel</div>
+        <p>A global leader in speciality wire ropes and steel, with manufacturing in Jamshedpur. Gear cutting, precision machining and gearbox overhaul services for their production equipment.</p>
+      </div>
+      <div class="cl-card rv d2">
+        <div class="cl-name">Thriveni Earthmovers</div>
+        <div class="cl-sect">Mining &amp; Earth Moving</div>
+        <p>One of India's leading mining service companies. Precision machining of sprockets, shafts and drive components for their heavy earthmoving equipment fleet.</p>
+      </div>
+      <div class="cl-card rv d3">
+        <div class="cl-name">And Many More</div>
+        <div class="cl-sect">Across Sectors</div>
+        <p>Our portfolio spans steel, copper, mining, wire rope, construction and infrastructure — reflecting broad capability across all sub-disciplines of heavy mechanical engineering. Enquiries welcome from all sectors.</p>
+      </div>
+    </div>
+    <div class="cl-quote rv">
+      <blockquote>For over eight decades, we have built this business on one principle: a client who trusts us with a critical component trusts us with their production. That responsibility shapes everything we do — from how we machine a shaft to how quickly we respond to a call.</blockquote>
+      <div class="cl-qcta">
+        <a href="#contact" class="btn btn-gold">Work With Us <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="ct-grid">
+      <div class="rv">
+        <div class="sec-eyebrow">Get in Touch</div>
+        <h2 class="sec-title">Start a<br>Conversation</h2>
+        <div class="sec-rule"></div>
+        <p>Whether you have an urgent breakdown, an upcoming shutdown requirement, or a long-term fabrication project — we want to hear from you. Send us the details and our team will respond promptly.</p>
+        <div class="ct-list">
+          <div class="ct-row">
+            <div class="ct-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="ct-txt"><b>Workshop Address</b><span>2 Bandi Road, Sakchi, Jamshedpur – 831001, Jharkhand</span></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69l3-.01a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.07 6.07l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="ct-txt">
+              <b>Phone</b>
+              <a href="tel:+919431113328">+91 94311 13328 &nbsp;(Primary · WhatsApp)</a>
+              <a href="tel:+917070498111">+91 70704 98111</a>
+              <a href="tel:+916572423894">0657-2423894 &nbsp;(Landline)</a>
+            </div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div class="ct-txt"><b>Email</b><a href="mailto:mbros1937@rediffmail.com">mbros1937@rediffmail.com</a></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div class="ct-txt"><b>WhatsApp</b><a href="https://wa.me/919431113328" target="_blank" rel="noopener">+91 94311 13328 — Chat with us directly</a></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="ct-txt"><b>Working Hours</b><span>Monday – Saturday &nbsp;·&nbsp; 8:00 AM – 6:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-form rv d2">
+        <h3>Request a Quote</h3>
+        <form id="qf" onsubmit="fs(event)">
+          <div class="f-row">
+            <div class="fg"><label>Your Name *</label><input type="text" name="name" required placeholder="Full name"></div>
+            <div class="fg"><label>Company *</label><input type="text" name="co" required placeholder="Organisation name"></div>
+          </div>
+          <div class="f-row">
+            <div class="fg"><label>Phone *</label><input type="tel" name="ph" required placeholder="+91 XXXXX XXXXX"></div>
+            <div class="fg"><label>Email</label><input type="email" name="em" placeholder="your@email.com"></div>
+          </div>
+          <div class="fg">
+            <label>Service Required *</label>
+            <select name="svc" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Mechanical Maintenance / Overhauling</option>
+              <option>Precision Machining (Turning / Boring / Milling)</option>
+              <option>Gear Cutting / Gear Manufacturing</option>
+              <option>Gearbox Strip &amp; Rebuild</option>
+              <option>Heavy Fabrication / Structural Work</option>
+              <option>Hydraulic Press Work</option>
+              <option>Reverse Engineering</option>
+              <option>Multiple Services / General Enquiry</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Job Description *</label>
+            <textarea name="msg" required placeholder="Describe the component, material, quantity, required tolerance and any drawings available. The more detail, the faster we can provide an accurate quote."></textarea>
+          </div>
+          <!-- honeypot: hidden from humans, bots tend to fill it -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;">
+            <label>Website</label><input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <p id="f-err" style="display:none;color:#e0736b;font-size:.82rem;margin-bottom:10px;"></p>
+          <button type="submit" class="f-btn">Send Enquiry →</button>
+        </form>
+        <div id="f-ok">
+          ✓ Thank you — we have received your enquiry and will respond within one business day.<br>
+          <span style="font-size:.88rem;color:var(--steel);font-weight:400;">For faster response, reach us on <a href="https://wa.me/919431113328" style="color:var(--brass);">WhatsApp</a>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="fb-brand">
+        <img src="assets/img/logo-transparent.png" alt="Mohan Brothers">
+        <b>Mohan Brothers</b>
+        <em>Expertise. Commitment. Value.</em>
+        <small>Industrial Engineering · Est. 1937 · Jamshedpur</small>
+        <p>Precision machining, gear cutting, heavy fabrication and mechanical maintenance — Jamshedpur's trusted workshop partner for over eight decades.</p>
+      </div>
+      <div class="fc">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Mechanical Maintenance</a></li>
+          <li><a href="#services">Precision Machining</a></li>
+          <li><a href="#services">Gear Cutting &amp; Hobbing</a></li>
+          <li><a href="#services">Heavy Fabrication</a></li>
+          <li><a href="#capabilities">Gearbox Overhaul</a></li>
+          <li><a href="#capabilities">Reverse Engineering</a></li>
+          <li><a href="#equipment">Machine Inventory</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h5>Contact</h5>
+        <p>2 Bandi Road, Sakchi<br>Jamshedpur – 831001<br>Jharkhand, India</p>
+        <a href="tel:+919431113328">+91 94311 13328 (Primary)</a>
+        <a href="tel:+917070498111">+91 70704 98111</a>
+        <a href="tel:+916572423894">0657-2423894</a>
+        <a href="mailto:mbros1937@rediffmail.com">mbros1937@rediffmail.com</a>
+        <a href="https://wa.me/919431113328" target="_blank" rel="noopener" style="color:var(--brass);display:flex;align-items:center;gap:6px;margin-top:10px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2024 Mohan Brothers, Jamshedpur. All rights reserved.</p>
+      <span>Expertise. Commitment. Value. · Est. 1937</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a class="wa" href="https://wa.me/919431113328" target="_blank" rel="noopener" aria-label="WhatsApp Mohan Brothers">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- Lightbox -->
+<div id="lb">
+  <button id="lb-x" onclick="closeLb()">×</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+/* ── Nav ── */
+const nav = document.getElementById('nav');
+const hbg = document.getElementById('hbg');
+const drw = document.getElementById('drw');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 30), {passive:true});
+nav.classList.toggle('solid', scrollY > 30);
+hbg.addEventListener('click', () => {
+  hbg.classList.toggle('o');
+  drw.classList.toggle('o');
+  document.body.style.overflow = drw.classList.contains('o') ? 'hidden' : '';
+});
+document.querySelectorAll('.dl').forEach(a => a.addEventListener('click', () => {
+  hbg.classList.remove('o'); drw.classList.remove('o'); document.body.style.overflow = '';
+}));
+
+/* ── Reveal ── */
+const rio = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){ e.target.classList.add('in'); rio.unobserve(e.target); }
+}), {threshold:.1, rootMargin:'0px 0px -36px 0px'});
+document.querySelectorAll('.rv').forEach(el => rio.observe(el));
+
+/* ── Stats accent lines ── */
+const sio = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){ document.querySelectorAll('.stat').forEach(s=>s.classList.add('lit')); sio.disconnect(); }
+}), {threshold:.5});
+const sb = document.querySelector('.hero-stats');
+if(sb) sio.observe(sb);
+
+/* ── Lightbox ── */
+function openLb(el){ const i=el.querySelector('img'); document.getElementById('lb-img').src=i.src; document.getElementById('lb-img').alt=i.alt; document.getElementById('lb').classList.add('on'); document.body.style.overflow='hidden'; }
+function closeLb(){ document.getElementById('lb').classList.remove('on'); document.body.style.overflow=''; }
+document.getElementById('lb').addEventListener('click', function(e){ if(e.target===this) closeLb(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLb(); });
+
+/* ── Form ── */
+async function fs(e){
+  e.preventDefault();
+  const form = document.getElementById('qf');
+  const errEl = document.getElementById('f-err');
+  const btn = form.querySelector('.f-btn');
+  errEl.style.display = 'none';
+
+  const fd = new FormData(form);
+  const payload = {
+    name:    fd.get('name'),
+    company: fd.get('co'),
+    phone:   fd.get('ph'),
+    email:   fd.get('em'),
+    service: fd.get('svc'),
+    message: fd.get('msg'),
+    website: fd.get('website')   // honeypot
+  };
+
+  const original = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  try{
+    const res = await fetch('/api/enquiries', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json().catch(() => ({}));
+    if(res.ok){
+      form.style.display = 'none';
+      document.getElementById('f-ok').style.display = 'block';
+      return;
+    }
+    if(data.fields){
+      errEl.textContent = Object.values(data.fields)[0] || 'Please check the form and try again.';
+    }else{
+      errEl.textContent = data.error || 'Something went wrong. Please call or WhatsApp us.';
+    }
+    errEl.style.display = 'block';
+  }catch(err){
+    errEl.textContent = 'Network error — please WhatsApp us at +91 94311 13328.';
+    errEl.style.display = 'block';
+  }finally{
+    btn.disabled = false;
+    btn.textContent = original;
+  }
+}
+
+/* ── Video lazy play ── */
+const vio = new IntersectionObserver(es => es.forEach(e => {
+  const v=e.target; if(e.isIntersecting){ v.play().catch(()=>{}); } else { v.pause(); }
+}), {threshold:.2});
+document.querySelectorAll('video').forEach(v => { v.muted=true; vio.observe(v); });
+
+/* ── Active nav ── */
+const secs = document.querySelectorAll('section[id]');
+const nls = document.querySelectorAll('.nav-links a:not(.nav-cta-li a)');
+window.addEventListener('scroll', () => {
+  let cur='';
+  secs.forEach(s=>{ if(scrollY >= s.offsetTop-100) cur=s.id; });
+  nls.forEach(a => a.classList.toggle('act', a.getAttribute('href')==='#'+cur));
+}, {passive:true});
+</script>
+</body>
+</html>

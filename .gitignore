@@ -1,0 +1,18 @@
+# Local Python backend database (not used by Cloudflare — D1 replaces it)
+enquiries.db
+enquiries.db-wal
+enquiries.db-shm
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Cloudflare / Node (only if you ever use the CLI)
+node_modules/
+.wrangler/
+.dev.vars
