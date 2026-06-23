@@ -569,6 +569,82 @@ footer{background:var(--ink);border-top:1px solid var(--rule);}
 .wa:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(0,0,0,.65);}
 .wa svg{width:27px;height:27px;fill:white;}
 @media(max-width:580px){.wa{bottom:16px;right:16px;width:46px;height:46px;}}
+
+/* ═══════════════════════════════════════════
+   MOBILE REFINEMENTS  (≤768px)
+   Desktop/laptop layout (>768px) is unchanged.
+═══════════════════════════════════════════ */
+@media (max-width: 768px){
+  /* never allow sideways scrolling on a phone */
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{font-size:15px;}
+  p{overflow-wrap:break-word;}
+
+  /* tighter vertical rhythm so there's less dead space */
+  #about{padding:64px 0 0;}
+  #services,#capabilities,#equipment,#work,#clients,#contact{padding:64px 0;}
+
+  /* section headings */
+  .sec-eyebrow{font-size:9px;letter-spacing:.2em;margin-bottom:14px;}
+  .sec-title{font-size:clamp(2.3rem,10vw,3.4rem);line-height:.96;}
+
+  /* ── HERO ── */
+  .hero-body{padding-top:calc(var(--nav-h) + 30px);}
+  .hero-inner{padding-bottom:44px;}
+  .hero-est{font-size:9px;letter-spacing:.16em;margin-bottom:18px;flex-wrap:wrap;line-height:1.4;}
+  .hero-est::before{width:26px;}
+  .hero-brand{font-size:clamp(3.3rem,16vw,5.4rem);line-height:.9;}
+  .hero-tagline{
+    flex-wrap:wrap;
+    font-size:.66rem;
+    font-weight:600;
+    letter-spacing:.22em;
+    margin:14px 0 24px;
+  }
+  .hero-tagline .dot{margin:0 9px;}
+  .hero-sub{font-size:.95rem;line-height:1.75;max-width:none;margin-bottom:28px;}
+  .hero-ctas{gap:10px;}
+  .hero-ctas .btn{flex:1 1 140px;justify-content:center;padding:14px 18px;}
+
+  /* hero stats — keep numbers from overflowing */
+  .stat{padding:20px 0 20px 16px;}
+  .stat-n{font-size:2rem;}
+  .stat-l{font-size:9px;letter-spacing:.12em;}
+  .ti{font-size:.78rem;padding:0 20px;}
+
+  /* ── body copy: comfortable reading size ── */
+  .about-lede{font-size:1rem;line-height:1.8;}
+  .about-body,.cap-intro p,.svc-hd p,.eq-hd p,.cl-hd p,.ct-left>p{font-size:.94rem;line-height:1.8;}
+  .about-pull p{font-size:1rem;}
+  .vm-card h3{font-size:1.55rem;}
+  .vm-card p{font-size:.92rem;}
+
+  /* ── service / capability / client cards ── */
+  .svc-body{padding:24px 22px 26px;}
+  .svc-body h3{font-size:1.55rem;}
+  .svc-body p{font-size:.92rem;}
+  .cap-cell h4{font-size:1.05rem;}
+  .cl-name{font-size:1.25rem;}
+  .cl-quote blockquote{font-size:1rem;}
+
+  /* ── contact ── */
+  .ct-form{padding:30px 22px;}
+  .ct-form h3{font-size:1.55rem;}
+  .ct-row{padding:14px 14px;}
+
+  /* footer a touch tighter */
+  .footer-main{padding:52px 0 36px;}
+}
+
+/* very small phones (≤400px) */
+@media (max-width: 400px){
+  .wrap{padding:0 18px;}
+  .hero-brand{font-size:clamp(2.9rem,15vw,4.2rem);}
+  .hero-tagline{font-size:.6rem;letter-spacing:.16em;}
+  .hero-tagline .dot{margin:0 7px;}
+  .stat-n{font-size:1.75rem;}
+  .sec-title{font-size:clamp(2rem,9.5vw,2.8rem);}
+}
 </style>
 </head>
 <body>
