@@ -1329,11 +1329,26 @@ async function fs(e){
   }
 }
 
-/* ── Video lazy play ── */
+/* ── Video posters + lazy play (mobile-friendly) ── */
 const vio = new IntersectionObserver(es => es.forEach(e => {
   const v=e.target; if(e.isIntersecting){ v.play().catch(()=>{}); } else { v.pause(); }
 }), {threshold:.2});
-document.querySelectorAll('video').forEach(v => { v.muted=true; vio.observe(v); });
+document.querySelectorAll('video').forEach(v => {
+  v.muted = true;
+  v.setAttribute('playsinline','');
+  v.setAttribute('webkit-playsinline','');
+  /* Give each video a still-frame poster (shown when autoplay is blocked,
+     e.g. iOS Low Power Mode / Android Data Saver) so it never shows blank. */
+  if(!v.getAttribute('poster')){
+    const s = v.querySelector('source');
+    const src = s ? s.getAttribute('src') : '';
+    const m = src && src.match(/([^/]+)\.mp4$/);
+    if(m){ v.poster = 'assets/poster/' + m[1] + '.jpg'; }
+  }
+  /* If autoplay was blocked, a tap plays the video. */
+  v.addEventListener('click', () => { if(v.paused) v.play().catch(()=>{}); });
+  vio.observe(v);
+});
 
 /* ── Active nav ── */
 const secs = document.querySelectorAll('section[id]');
